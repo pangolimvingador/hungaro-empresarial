@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Húngaro Empresarial</title>
-
   <meta
     name="description"
     content="Consultoria empresarial com visão integrada em soluções ambientais, jurídicas e de negócios. Estratégia, segurança e estrutura para decisões complexas."
@@ -16,73 +15,61 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "G-J0L1QQQX13");
+    gtag('js', new Date());
+    gtag('config', 'G-J0L1QQQX13');
   </script>
 
   <style>
     :root {
-      --bg: #050606;
-      --line: rgba(255, 255, 255, 0.18);
-      --line-soft: rgba(255, 255, 255, 0.10);
-      --text: #f3f3f3;
-      --muted: rgba(255, 255, 255, 0.64);
+      --bg: #030404;
+      --bg-soft: #080909;
+      --text: #f1f1f1;
+      --muted: rgba(255, 255, 255, 0.62);
       --muted-soft: rgba(255, 255, 255, 0.42);
-      --green: #0b7a3b;
-      --green-light: #12a64f;
-      --red: #b31217;
-      --red-light: #e01820;
-      --card: rgba(255, 255, 255, 0.035);
-      --card-hover: rgba(255, 255, 255, 0.06);
+      --line: rgba(255, 255, 255, 0.19);
+      --line-soft: rgba(255, 255, 255, 0.10);
+      --green: #17a447;
+      --red: #e31b23;
+      --card: rgba(255, 255, 255, 0.025);
+      --card-hover: rgba(255, 255, 255, 0.05);
+      --max: 1480px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       min-height: 100vh;
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at 62% 23%, rgba(179, 18, 23, 0.12), transparent 26%),
-        radial-gradient(circle at 34% 38%, rgba(11, 122, 59, 0.10), transparent 30%),
-        linear-gradient(180deg, #090a0a 0%, #030404 100%);
       overflow-x: hidden;
+      color: var(--text);
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 66% 25%, rgba(165, 14, 20, 0.11), transparent 27%),
+        radial-gradient(circle at 27% 40%, rgba(5, 94, 48, 0.10), transparent 29%),
+        linear-gradient(180deg, #080909 0%, var(--bg) 100%);
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .site {
-      width: 100%;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
 
     .container {
-      width: min(1180px, calc(100% - 44px));
-      margin: 0 auto;
+      width: min(var(--max), calc(100% - 72px));
+      margin-inline: auto;
     }
 
+    /* Header */
     .header {
       border-bottom: 1px solid var(--line);
     }
 
     .header-inner {
-      min-height: 92px;
+      min-height: 98px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 28px;
+      gap: 36px;
     }
 
     .wordmark {
@@ -90,984 +77,656 @@
       flex-direction: column;
       align-items: flex-start;
       line-height: 1;
-    }
-
-    .wordmark-main {
-      font-size: clamp(26px, 4.2vw, 44px);
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: #f5f5f5;
-      text-transform: uppercase;
-      text-shadow: 0 8px 28px rgba(255, 255, 255, 0.10);
-    }
-
-    .wordmark-sub {
-      margin-top: 6px;
-      font-size: clamp(11px, 1.5vw, 17px);
-      font-weight: 400;
-      letter-spacing: 9px;
-      color: rgba(255, 255, 255, 0.82);
-      text-transform: uppercase;
-    }
-
-    .brand-bars {
-      margin-top: 9px;
-      width: 174px;
-      max-width: 100%;
-      height: 4px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      overflow: hidden;
-    }
-
-    .brand-bars span:nth-child(1) { background: var(--green-light); }
-    .brand-bars span:nth-child(2) { background: #f2f2f2; }
-    .brand-bars span:nth-child(3) { background: var(--red-light); }
-
-    .nav {
-      display: none;
-      align-items: center;
-      gap: 38px;
-      font-size: 12px;
-      letter-spacing: 2.8px;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.72);
-      white-space: nowrap;
-    }
-
-    .nav a {
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-
-    .nav a:hover {
-      color: #fff;
-    }
-
-    .nav .restricted {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 12px 15px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .menu-button {
-      width: 44px;
-      height: 44px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
       flex: 0 0 auto;
     }
 
-    .menu-lines,
-    .menu-lines::before,
-    .menu-lines::after {
+    .wordmark-main {
+      font-size: 34px;
+      font-weight: 650;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .wordmark-sub {
+      margin-top: 7px;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.80);
+    }
+
+    .brand-bars {
+      width: 196px;
+      height: 3px;
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .brand-bars span:nth-child(1) { background: var(--green); }
+    .brand-bars span:nth-child(2) { background: #f2f2f2; }
+    .brand-bars span:nth-child(3) { background: var(--red); }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(28px, 3.1vw, 62px);
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.68);
+      white-space: nowrap;
+    }
+
+    .desktop-nav a {
+      transition: color .2s ease;
+    }
+
+    .desktop-nav a:hover { color: #fff; }
+
+    .restricted-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      place-items: center;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
       content: "";
-      width: 21px;
-      height: 2px;
-      border-radius: 99px;
-      background: #fff;
       display: block;
+      width: 20px;
+      height: 2px;
+      background: #fff;
+      border-radius: 99px;
     }
 
-    .menu-lines {
-      position: relative;
+    .menu-toggle span { position: relative; }
+    .menu-toggle span::before { position: absolute; top: -7px; }
+    .menu-toggle span::after { position: absolute; top: 7px; }
+
+    .mobile-menu {
+      display: none;
+      border-top: 1px solid var(--line-soft);
+      padding: 8px 0 18px;
     }
 
-    .menu-lines::before {
-      position: absolute;
-      top: -7px;
+    .mobile-menu.is-open { display: grid; }
+
+    .mobile-menu a {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line-soft);
+      font-size: 12px;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
     }
 
-    .menu-lines::after {
-      position: absolute;
-      top: 7px;
-    }
-
+    /* Hero */
     .hero {
-      flex: 1;
-      padding: 30px 0 0;
+      padding: 22px 0 14px;
     }
 
     .hero-grid {
+      min-height: 390px;
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1.04fr) minmax(420px, .96fr);
       align-items: center;
-      gap: 24px;
+      gap: 72px;
     }
 
     .hero-copy {
-      text-align: center;
-      order: 2;
-    }
-
-    .eyebrow {
-      display: none;
-      color: var(--muted-soft);
-      text-transform: uppercase;
-      letter-spacing: 7px;
-      line-height: 1.9;
-      font-size: 13px;
-      margin-bottom: 24px;
+      padding-left: 64px;
     }
 
     .headline {
-      display: none;
       margin: 0;
-      font-size: clamp(42px, 5.2vw, 76px);
-      line-height: 1.05;
-      letter-spacing: -2.6px;
+      font-size: clamp(48px, 4vw, 68px);
+      line-height: 1.06;
+      letter-spacing: -2.3px;
       font-weight: 300;
-      color: #f4f4f4;
-      max-width: 690px;
+      color: #f3f3f3;
+    }
+
+    .headline span {
+      display: block;
+      white-space: nowrap;
     }
 
     .subhead {
-      display: none;
-      margin: 26px 0 0;
-      max-width: 560px;
-      color: var(--muted);
+      margin: 22px 0 0;
+      max-width: 600px;
       font-size: 18px;
-      line-height: 1.65;
+      line-height: 1.62;
+      color: var(--muted);
     }
 
     .hero-button {
-      display: none;
-      margin-top: 34px;
-      width: fit-content;
-      border: 1px solid rgba(255, 255, 255, 0.30);
-      border-radius: 5px;
-      padding: 17px 28px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 28px;
+      padding: 16px 31px;
+      border: 1px solid rgba(255, 255, 255, 0.31);
+      border-radius: 4px;
       font-size: 12px;
-      color: #fff;
-      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
     }
 
     .hero-button:hover {
-      background: rgba(255, 255, 255, 0.04);
+      transform: translateY(-2px);
       border-color: rgba(255, 255, 255, 0.55);
-      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.035);
     }
 
     .cube-stage {
-      order: 1;
       display: grid;
       place-items: center;
-      padding: 8px 0 6px;
+      min-width: 0;
     }
 
-    .cube-svg {
-      width: min(78vw, 430px);
+    .cube-image {
+      width: min(100%, 520px);
       height: auto;
       display: block;
-      filter: drop-shadow(0 45px 65px rgba(0, 0, 0, 0.84));
+      object-fit: contain;
+      filter: drop-shadow(0 32px 40px rgba(0, 0, 0, .55));
     }
 
-    .mobile-title {
-      text-align: center;
-      margin: 20px auto 0;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 6px;
-      font-size: clamp(14px, 3.2vw, 22px);
-      line-height: 1.85;
-      max-width: 720px;
-    }
-
-    .select-label {
-      width: min(980px, 100%);
-      margin: 28px auto 18px;
+    /* Áreas */
+    .area-intro {
+      width: min(1240px, calc(100% - 140px));
+      margin: 0 auto 18px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 20px;
+      gap: 24px;
       color: var(--muted-soft);
+      font-size: 13px;
+      letter-spacing: 7px;
       text-transform: uppercase;
-      letter-spacing: 8px;
-      font-size: 12px;
-      text-align: center;
+      white-space: nowrap;
     }
 
-    .select-label::before,
-    .select-label::after {
+    .area-intro::before,
+    .area-intro::after {
       content: "";
-      height: 1px;
       flex: 1;
+      height: 1px;
       background: var(--line);
     }
 
     .areas {
-      width: min(1020px, 100%);
-      margin: 0 auto 38px;
+      width: min(1240px, calc(100% - 140px));
+      margin: 0 auto 26px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
     }
 
-    .area {
-      position: relative;
-      min-height: 126px;
-      padding: 14px 4px;
+    .area-card {
+      min-height: 194px;
+      padding: 22px 28px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      gap: 10px;
+      justify-content: center;
       text-align: center;
-      color: #fff;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      background: var(--card);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
     }
 
-    .area:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 16%;
-      height: 68%;
-      width: 1px;
-      background: rgba(255, 255, 255, 0.25);
+    .area-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.34);
+      background: var(--card-hover);
     }
 
     .area-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(255, 255, 255, 0.78);
+      width: 66px;
+      height: 66px;
       display: grid;
       place-items: center;
-      color: #fff;
+      border: 1.5px solid rgba(255, 255, 255, 0.78);
+      border-radius: 50%;
     }
 
-    .area svg {
-      width: 31px;
-      height: 31px;
-      stroke: currentColor;
+    .area-icon svg {
+      width: 35px;
+      height: 35px;
       fill: none;
+      stroke: currentColor;
       stroke-width: 1.7;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
+    .area-card.ambiental .area-icon { color: var(--green); border-color: var(--green); }
+    .area-card.juridico .area-icon { color: var(--red); border-color: var(--red); }
+
     .area-title {
-      margin-top: 6px;
-      font-size: clamp(14px, 2.8vw, 22px);
-      text-transform: uppercase;
+      margin: 13px 0 0;
+      font-size: 21px;
+      font-weight: 400;
       letter-spacing: 5px;
+      text-transform: uppercase;
     }
 
-    .area-line {
-      width: 32px;
+    .area-accent {
+      width: 34px;
       height: 2px;
-      background: rgba(255, 255, 255, 0.75);
+      margin: 9px 0 8px;
+      background: rgba(255, 255, 255, 0.78);
     }
 
-    .area-desc,
-    .area-action {
-      display: none;
+    .ambiental .area-accent { background: var(--green); }
+    .juridico .area-accent { background: var(--red); }
+
+    .area-description {
+      margin: 0;
+      max-width: 310px;
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--muted);
     }
 
-    .area.ambiental .area-icon {
-      color: var(--green-light);
-      border-color: var(--green-light);
-    }
-
-    .area.ambiental .area-line {
-      background: var(--green-light);
-    }
-
-    .area.juridico .area-icon {
-      color: var(--red-light);
-      border-color: var(--red-light);
-    }
-
-    .area.juridico .area-line {
-      background: var(--red-light);
-    }
-
-    .footer {
-      margin-top: auto;
+    /* Footer */
+    .footer-shell {
+      width: min(1420px, calc(100% - 72px));
+      margin-inline: auto;
       border-top: 1px solid var(--line);
     }
 
-    .socials {
+    .social-row {
+      min-height: 68px;
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       border-bottom: 1px solid var(--line);
     }
 
-    .social {
-      min-height: 78px;
+    .social-link {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      text-transform: uppercase;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 11px;
       letter-spacing: 2px;
-      font-size: 10px;
-      color: var(--muted);
-      position: relative;
+      text-transform: uppercase;
     }
 
-    .social:not(:last-child)::after {
+    .social-link:not(:last-child)::after {
       content: "";
       position: absolute;
       right: 0;
-      height: 44%;
       width: 1px;
-      background: rgba(255, 255, 255, 0.20);
+      height: 34px;
+      background: var(--line);
     }
 
-    .social svg {
+    .social-link svg {
       width: 25px;
       height: 25px;
-      stroke: #fff;
       fill: none;
+      stroke: #fff;
       stroke-width: 1.6;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-    .quick {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+    .quick-row {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
       border-bottom: 1px solid var(--line);
     }
 
-    .quick a {
-      min-height: 66px;
-      padding: 10px 8px;
+    .quick-links {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 9px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 10px;
-      line-height: 1.4;
-      color: var(--muted);
-      text-align: center;
-      position: relative;
+      flex-wrap: wrap;
+      gap: 0;
     }
 
-    .quick a:nth-child(odd)::after {
+    .quick-links a {
+      position: relative;
+      padding: 10px 28px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.57);
+    }
+
+    .quick-links a:first-child { padding-left: 14px; }
+
+    .quick-links a:not(:last-child)::after {
       content: "";
       position: absolute;
       right: 0;
-      height: 42%;
+      top: 50%;
       width: 1px;
-      background: rgba(255, 255, 255, 0.20);
+      height: 24px;
+      transform: translateY(-50%);
+      background: var(--line);
     }
 
-    .quick svg {
-      width: 22px;
-      height: 22px;
-      stroke: #fff;
+    .ahr-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding-right: 14px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.64);
+      white-space: nowrap;
+    }
+
+    .ahr-link svg {
+      width: 21px;
+      height: 21px;
       fill: none;
+      stroke: #fff;
       stroke-width: 1.6;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      flex: 0 0 auto;
-    }
-
-    .ahr {
-      grid-column: 1 / -1;
-      color: rgba(255, 255, 255, 0.78);
     }
 
     .copyright {
-      padding: 16px 0 18px;
+      padding: 12px 0 15px;
       text-align: center;
-      color: var(--muted-soft);
-      font-size: 12px;
-      line-height: 1.55;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.34);
     }
 
-    @media (min-width: 720px) {
-      .container {
-        width: min(1180px, calc(100% - 72px));
-      }
-
-      .header-inner {
-        min-height: 100px;
-      }
-
-      .cube-svg {
-        width: min(48vw, 440px);
-      }
-
-      .areas {
-        margin-top: 8px;
-      }
-
-      .area {
-        min-height: 170px;
-      }
-
-      .area-icon {
-        width: 78px;
-        height: 78px;
-      }
-
-      .area svg {
-        width: 40px;
-        height: 40px;
-      }
-
-      .quick {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .quick a:nth-child(odd)::after {
-        display: none;
-      }
-
-      .quick a:not(:last-child)::after {
-        content: "";
-        display: block;
-        position: absolute;
-        right: 0;
-        height: 42%;
-        width: 1px;
-        background: rgba(255, 255, 255, 0.20);
-      }
+    /* Tablet */
+    @media (max-width: 1180px) {
+      .container { width: min(100% - 48px, var(--max)); }
+      .desktop-nav { gap: 24px; }
+      .hero-grid { grid-template-columns: 1fr 1fr; gap: 42px; }
+      .hero-copy { padding-left: 20px; }
+      .headline { font-size: 52px; }
+      .cube-image { width: min(100%, 440px); }
+      .area-intro,
+      .areas { width: min(100% - 56px, 1120px); }
     }
 
-    @media (min-width: 1060px) {
-      .container {
-        width: min(1220px, calc(100% - 96px));
-      }
+    @media (max-width: 980px) {
+      .desktop-nav { display: none; }
+      .menu-toggle { display: grid; }
 
-      .header-inner {
-        min-height: 104px;
-      }
-
-      .nav {
-        display: flex;
-      }
-
-      .menu-button {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 46px;
-      }
-
+      .hero { padding-top: 16px; }
       .hero-grid {
-        grid-template-columns: 0.93fr 1.07fr;
-        gap: 84px;
-        min-height: 430px;
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 6px;
       }
 
-      .hero-copy {
-        order: 1;
-        text-align: left;
-      }
+      .cube-stage { order: 1; }
+      .hero-copy { order: 2; padding: 0; text-align: center; }
+      .cube-image { width: min(72vw, 430px); }
+      .headline { font-size: clamp(38px, 6.5vw, 58px); }
+      .headline span { white-space: normal; }
+      .subhead { margin-inline: auto; }
+      .hero-button { margin-top: 24px; }
+      .area-intro { margin-top: 26px; }
+      .areas { gap: 14px; }
+      .area-card { min-height: 184px; padding: 20px 18px; }
+      .quick-row { align-items: stretch; flex-direction: column; gap: 0; }
+      .quick-links { justify-content: center; border-bottom: 1px solid var(--line); }
+      .quick-links a { padding-block: 18px; }
+      .ahr-link { justify-content: center; padding: 18px 12px; }
+    }
 
-      .cube-stage {
-        order: 2;
-        justify-content: center;
-      }
+    /* Smartphone */
+    @media (max-width: 680px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      .header-inner { min-height: 84px; }
+      .wordmark-main { font-size: 27px; }
+      .wordmark-sub { font-size: 11px; letter-spacing: 6px; }
+      .brand-bars { width: 156px; }
 
-      .eyebrow,
-      .headline,
-      .subhead,
-      .hero-button {
-        display: block;
-      }
+      .hero { padding-top: 10px; }
+      .cube-image { width: min(84vw, 350px); }
+      .headline { font-size: 34px; line-height: 1.08; letter-spacing: -1px; }
+      .subhead { font-size: 16px; line-height: 1.55; }
+      .hero-button { padding: 14px 22px; font-size: 11px; }
 
-      .hero-button {
-        display: inline-flex;
-      }
-
-      .mobile-title {
-        display: none;
-      }
-
-      .cube-svg {
-        width: min(38vw, 500px);
-      }
-
-      .select-label {
-        margin-top: 26px;
-        margin-bottom: 20px;
+      .area-intro {
+        width: calc(100% - 28px);
+        gap: 12px;
+        margin-top: 24px;
+        font-size: 10px;
+        letter-spacing: 4px;
       }
 
       .areas {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-        width: min(1040px, 100%);
-        margin-bottom: 42px;
+        width: calc(100% - 28px);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
       }
 
-      .area {
-        min-height: 214px;
-        border: 1px solid var(--line);
-        background: var(--card);
-        border-radius: 4px;
-        padding: 30px 24px;
-        justify-content: center;
-        transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      .area-card {
+        min-height: 130px;
+        padding: 10px 4px;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
       }
 
-      .area:hover {
-        transform: translateY(-3px);
-        background: var(--card-hover);
-        border-color: rgba(255, 255, 255, 0.32);
+      .area-card:not(:last-child) {
+        border-right: 1px solid var(--line);
       }
 
-      .area:not(:last-child)::after {
-        display: none;
-      }
+      .area-card:hover { transform: none; background: transparent; }
+      .area-icon { width: 52px; height: 52px; }
+      .area-icon svg { width: 28px; height: 28px; }
+      .area-title { font-size: 13px; letter-spacing: 3px; }
+      .area-description { display: none; }
+      .area-accent { margin-top: 4px; }
 
-      .area-desc {
-        display: block;
-        margin: 6px auto 0;
-        max-width: 270px;
-        color: var(--muted);
-        font-size: 14px;
-        line-height: 1.55;
-      }
-
-      .area-action {
-        display: block;
-        margin-top: 16px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 11px;
-        color: #fff;
-      }
-
-      .footer .container {
-        width: min(1180px, calc(100% - 96px));
-      }
-
-      .social {
-        min-height: 68px;
-        font-size: 11px;
-      }
-
-      .quick {
-        grid-template-columns: repeat(6, 1fr);
-      }
-
-      .ahr {
-        grid-column: auto;
-      }
-
-      .quick a {
-        min-height: 62px;
-      }
-    }
-
-    @media (max-width: 460px) {
-      .container {
-        width: min(100% - 28px, 1180px);
-      }
-
-      .header-inner {
-        min-height: 84px;
-      }
-
-      .wordmark-main {
-        font-size: 26px;
-      }
-
-      .wordmark-sub {
-        letter-spacing: 7px;
-      }
-
-      .brand-bars {
-        width: 142px;
-      }
-
-      .cube-svg {
-        width: min(84vw, 340px);
-      }
-
-      .select-label {
-        letter-spacing: 5px;
-        font-size: 11px;
-      }
-
-      .area-icon {
-        width: 52px;
-        height: 52px;
-      }
-
-      .area svg {
-        width: 28px;
-        height: 28px;
-      }
-
-      .area-title {
-        letter-spacing: 3.2px;
-      }
-
-      .social {
-        min-height: 74px;
-        flex-direction: column;
-        gap: 6px;
-        font-size: 9px;
-        letter-spacing: 1.5px;
-      }
-
-      .quick a {
-        font-size: 9px;
-        letter-spacing: 1.5px;
-      }
+      .footer-shell { width: calc(100% - 28px); }
+      .social-row { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .social-link { min-height: 78px; flex-direction: column; gap: 7px; font-size: 8px; letter-spacing: 1px; }
+      .social-link svg { width: 22px; height: 22px; }
+      .quick-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+      .quick-links a { padding: 17px 8px; text-align: center; }
+      .quick-links a:first-child { padding-left: 8px; }
+      .quick-links a::after { display: none; }
+      .quick-links a:nth-child(odd) { border-right: 1px solid var(--line); }
+      .quick-links a { border-bottom: 1px solid var(--line-soft); }
+      .ahr-link { white-space: normal; text-align: center; }
     }
   </style>
 </head>
 
 <body>
-  <div class="site">
-    <header class="header">
-      <div class="container header-inner">
-        <a href="/" class="wordmark" aria-label="Húngaro Empresarial">
-          <span class="wordmark-main">Húngaro</span>
-          <span class="wordmark-sub">Empresarial</span>
-          <span class="brand-bars" aria-hidden="true">
-            <span></span><span></span><span></span>
-          </span>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#topo" class="wordmark" aria-label="Húngaro Empresarial">
+        <span class="wordmark-main">Húngaro</span>
+        <span class="wordmark-sub">Empresarial</span>
+        <span class="brand-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Menu principal">
+        <a href="#quem-somos">Quem Somos</a>
+        <a href="#cases">Cases</a>
+        <a href="#banco-de-terras">Banco de Terras</a>
+        <a href="#radar-hungaro">Radar Húngaro</a>
+        <a href="#area-restrita" class="restricted-link">🔒 Área Restrita</a>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="container mobile-menu" id="menu-mobile" aria-label="Menu mobile">
+      <a href="#quem-somos">Quem Somos</a>
+      <a href="#cases">Cases</a>
+      <a href="#banco-de-terras">Banco de Terras</a>
+      <a href="#radar-hungaro">Radar Húngaro</a>
+      <a href="#area-restrita">🔒 Área Restrita</a>
+    </nav>
+  </header>
+
+  <main id="topo">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 class="headline">
+            <span>Consultoria empresarial</span>
+            <span>com visão integrada</span>
+          </h1>
+
+          <p class="subhead">
+            Estratégia, segurança e estrutura para decisões ambientais,
+            jurídicas e empresariais complexas.
+          </p>
+
+          <a href="#areas" class="hero-button">Conhecer a Húngaro <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="cube-stage">
+          <img
+            src="cube-hungaro.png"
+            alt="Cubo tridimensional da Húngaro Empresarial nas cores verde, branco e vermelho"
+            class="cube-image"
+            width="511"
+            height="456"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div class="area-intro" id="areas">Selecione uma área</div>
+
+    <section class="areas" aria-label="Áreas de atuação">
+      <a href="#ambiental" class="area-card ambiental">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21V8" />
+            <path d="M12 8C8.5 10.2 6 13.2 6 16.2A6 6 0 0 0 18 16.2C18 13.2 15.5 10.2 12 8Z" />
+            <path d="M12 14l3-3M12 17l-3-3" />
+          </svg>
+        </div>
+        <h2 class="area-title">Ambiental</h2>
+        <div class="area-accent"></div>
+        <p class="area-description">Soluções ambientais com segurança técnica e responsabilidade.</p>
+      </a>
+
+      <a href="#juridico" class="area-card juridico">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v18M5 7h14M7 7l-4 7h8L7 7ZM17 7l-4 7h8l-4-7ZM9 21h6" />
+          </svg>
+        </div>
+        <h2 class="area-title">Jurídico</h2>
+        <div class="area-accent"></div>
+        <p class="area-description">Estratégia jurídica sólida para riscos e decisões complexas.</p>
+      </a>
+
+      <a href="#negocios" class="area-card negocios">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 19h16M6 17v-5M11 17V9M16 17V6M5 10l5-4 4 3 5-6M19 3v5h-5" />
+          </svg>
+        </div>
+        <h2 class="area-title">Negócios</h2>
+        <div class="area-accent"></div>
+        <p class="area-description">Estrutura e inteligência para gerar valor com consistência.</p>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-shell">
+      <div class="social-row" aria-label="Redes sociais e contato">
+        <a href="https://www.facebook.com/hungaroempresarial" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 0 0-2 2v2H9v3h2v6h3v-6h2.3l.7-3H14v-1.5c0-.8.3-1.5 1.5-1.5H17V6.2A12 12 0 0 0 15 6c-2.6 0-4 1.6-4 4v2H8v3h3v6"/></svg>
+          <span>Facebook</span>
         </a>
 
-        <nav class="nav" aria-label="Menu principal">
-          <a href="#quem-somos">Quem Somos</a>
-          <a href="#cases">Cases</a>
-          <a href="#banco-de-terras">Banco de Terras</a>
-          <a href="#radar-hungaro">Radar Húngaro</a>
-          <a href="#area-restrita" class="restricted">🔒 Área Restrita</a>
-        </nav>
+        <a href="https://wa.me/5598986138287" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.4 3 2.4 5 5.5 6 .6.2 1.2-.6 1.5-1.1"/></svg>
+          <span>WhatsApp</span>
+        </a>
 
-        <a href="#menu" class="menu-button" aria-label="Abrir menu">
-          <span class="menu-lines"></span>
+        <a href="mailto:negocios@hungaroempresarial.com.br" class="social-link" aria-label="E-mail">
+          <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+          <span>E-mail</span>
+        </a>
+
+        <a href="https://www.instagram.com/hungaroempresarial" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4"/><circle cx="12" cy="12" r="3.3"/><path d="M16.7 7.3h.1"/></svg>
+          <span>Instagram</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/h%C3%BAngaro-empresarial-871218426" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M6 10v8M6 7h.1M10 18v-8M10 13c0-1.6 1.2-3 3-3s3 1.2 3 3v5"/></svg>
+          <span>LinkedIn</span>
         </a>
       </div>
-    </header>
 
-    <main class="hero">
-      <div class="container">
-        <section class="hero-grid" aria-label="Apresentação Húngaro Empresarial">
-          <div class="hero-copy">
-            <div class="eyebrow">
-              Consultoria empresarial<br />
-              com visão integrada
-            </div>
-
-            <h1 class="headline">
-              Consultoria empresarial<br />
-              com visão integrada
-            </h1>
-
-            <p class="subhead">
-              Estratégia, segurança e estrutura para decisões ambientais,
-              jurídicas e empresariais complexas.
-            </p>
-
-            <a href="#areas" class="hero-button">
-              Conhecer a Húngaro&nbsp;&nbsp; →
-            </a>
-          </div>
-
-          <div class="cube-stage" aria-hidden="true">
-            <svg class="cube-svg" viewBox="0 0 520 480" role="img">
-              <defs>
-                <linearGradient id="redFace" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0%" stop-color="#f51d22"/>
-                  <stop offset="55%" stop-color="#b90f16"/>
-                  <stop offset="100%" stop-color="#72070b"/>
-                </linearGradient>
-
-                <linearGradient id="greenFace" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0%" stop-color="#0d8c47"/>
-                  <stop offset="55%" stop-color="#075b32"/>
-                  <stop offset="100%" stop-color="#022916"/>
-                </linearGradient>
-
-                <linearGradient id="whiteFace" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0%" stop-color="#ffffff"/>
-                  <stop offset="55%" stop-color="#cfcfcf"/>
-                  <stop offset="100%" stop-color="#8f8f8f"/>
-                </linearGradient>
-
-                <filter id="cubeShadow" x="-40%" y="-40%" width="180%" height="180%">
-                  <feDropShadow dx="0" dy="28" stdDeviation="20" flood-color="#000000" flood-opacity="0.78"/>
-                </filter>
-
-                <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-                  <feGaussianBlur stdDeviation="2.6" result="blur"/>
-                  <feMerge>
-                    <feMergeNode in="blur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-              </defs>
-
-              <ellipse cx="260" cy="425" rx="175" ry="34" fill="rgba(255,255,255,0.08)" />
-
-              <g filter="url(#cubeShadow)">
-                <polygon points="260,48 430,138 260,228 90,138" fill="url(#redFace)" />
-                <polygon points="90,138 260,228 260,420 90,330" fill="url(#greenFace)" />
-                <polygon points="260,228 430,138 430,330 260,420" fill="url(#whiteFace)" />
-
-                <g stroke="rgba(0,0,0,0.48)" stroke-width="5" stroke-linecap="round">
-                  <path d="M203 78 L373 168" />
-                  <path d="M147 108 L317 198" />
-                  <path d="M317 78 L147 168" />
-                  <path d="M373 108 L203 198" />
-
-                  <path d="M147 168 L147 360" />
-                  <path d="M203 198 L203 390" />
-                  <path d="M90 202 L260 292" />
-                  <path d="M90 266 L260 356" />
-
-                  <path d="M317 198 L317 390" />
-                  <path d="M373 168 L373 360" />
-                  <path d="M260 292 L430 202" />
-                  <path d="M260 356 L430 266" />
-                </g>
-
-                <g stroke="rgba(255,255,255,0.22)" stroke-width="2">
-                  <path d="M260 48 L430 138 L430 330 L260 420 L90 330 L90 138 Z" fill="none" />
-                  <path d="M90 138 L260 228 L430 138" fill="none" />
-                  <path d="M260 228 L260 420" fill="none" />
-                </g>
-
-                <g filter="url(#softGlow)">
-                  <path
-                    d="M247 206
-                       C247 193 255 184 268 184
-                       L292 184
-                       C305 184 313 193 313 206
-                       L313 392
-                       L285 392
-                       L285 316
-                       C285 307 279 301 270 301
-                       C261 301 255 307 255 316
-                       L255 392
-                       L227 392
-                       L227 206
-                       C227 193 235 184 248 184
-                       L247 206 Z"
-                    fill="rgba(255,255,255,0.82)"
-                  />
-                </g>
-              </g>
-            </svg>
-          </div>
-        </section>
-
-        <div class="mobile-title">
-          Consultoria empresarial<br />
-          com visão integrada
-        </div>
-
-        <div class="select-label" id="areas">
-          Selecione uma área
-        </div>
-
-        <section class="areas">
-          <a href="#ambiental" class="area ambiental">
-            <div class="area-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 21V9" />
-                <path d="M12 9c-2.6 1.4-5 4.2-5 7.2 0 2.7 2.2 4.8 5 4.8s5-2.1 5-4.8C17 13.2 14.6 10.4 12 9Z" />
-                <path d="M12 15l3-3" />
-                <path d="M12 17l-3-3" />
-              </svg>
-            </div>
-
-            <div class="area-title">Ambiental</div>
-            <div class="area-line"></div>
-
-            <p class="area-desc">
-              Soluções ambientais com segurança técnica, regularização e responsabilidade.
-            </p>
-
-            <span class="area-action">Acessar área →</span>
-          </a>
-
-          <a href="#juridico" class="area juridico">
-            <div class="area-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3v18" />
-                <path d="M5 7h14" />
-                <path d="M7 7l-4 7h8l-4-7Z" />
-                <path d="M17 7l-4 7h8l-4-7Z" />
-                <path d="M9 21h6" />
-              </svg>
-            </div>
-
-            <div class="area-title">Jurídico</div>
-            <div class="area-line"></div>
-
-            <p class="area-desc">
-              Estratégia jurídica sólida para riscos, contratos e decisões complexas.
-            </p>
-
-            <span class="area-action">Acessar área →</span>
-          </a>
-
-          <a href="#negocios" class="area negocios">
-            <div class="area-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 19h16" />
-                <path d="M6 17v-5" />
-                <path d="M11 17V9" />
-                <path d="M16 17V6" />
-                <path d="M5 10l5-4 4 3 5-6" />
-                <path d="M19 3v5h-5" />
-              </svg>
-            </div>
-
-            <div class="area-title">Negócios</div>
-            <div class="area-line"></div>
-
-            <p class="area-desc">
-              Estrutura e inteligência para gerar valor, eficiência e crescimento.
-            </p>
-
-            <span class="area-action">Acessar área →</span>
-          </a>
-        </section>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="socials" aria-label="Canais de contato">
-          <a
-            href="https://www.facebook.com/hungaroempresarial"
-            class="social"
-            aria-label="Facebook"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg viewBox="0 0 24 24">
-              <path d="M15 8h-2a2 2 0 0 0-2 2v2H9v3h2v6h3v-6h2.3l.7-3H14v-1.5c0-.8.3-1.5 1.5-1.5H17V6.2A12 12 0 0 0 15 6c-2.6 0-4 1.6-4 4v2H8v3h3v6" />
-            </svg>
-            <span>Facebook</span>
-          </a>
-
-          <a
-            href="https://wa.me/5598986138287"
-            class="social"
-            aria-label="WhatsApp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg viewBox="0 0 24 24">
-              <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z" />
-              <path d="M9 8.5c.4 3 2.4 5 5.5 6 .6.2 1.2-.6 1.5-1.1" />
-            </svg>
-            <span>WhatsApp</span>
-          </a>
-
-          <a
-            href="mailto:negocios@hungaroempresarial.com.br"
-            class="social"
-            aria-label="E-mail"
-          >
-            <svg viewBox="0 0 24 24">
-              <path d="M4 6h16v12H4z" />
-              <path d="m4 7 8 6 8-6" />
-            </svg>
-            <span>E-mail</span>
-          </a>
-
-          <a
-            href="https://www.instagram.com/hungaroempresarial"
-            class="social"
-            aria-label="Instagram"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg viewBox="0 0 24 24">
-              <rect x="5" y="5" width="14" height="14" rx="4" />
-              <circle cx="12" cy="12" r="3.3" />
-              <path d="M16.7 7.3h.1" />
-            </svg>
-            <span>Instagram</span>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/h%C3%BAngaro-empresarial-871218426"
-            class="social"
-            aria-label="LinkedIn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg viewBox="0 0 24 24">
-              <path d="M6 10v8" />
-              <path d="M6 7h.1" />
-              <path d="M10 18v-8" />
-              <path d="M10 13c0-1.6 1.2-3 3-3s3 1.2 3 3v5" />
-            </svg>
-            <span>LinkedIn</span>
-          </a>
-        </div>
-
-        <nav class="quick" aria-label="Acessos rápidos">
-          <a href="#quem-somos" id="quem-somos">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="8" r="3" />
-              <path d="M5 20c1.2-4 12.8-4 14 0" />
-            </svg>
-            Quem Somos
-          </a>
-
-          <a href="#cases" id="cases">
-            <svg viewBox="0 0 24 24">
-              <rect x="4" y="7" width="16" height="12" rx="1.5" />
-              <path d="M9 7V5h6v2" />
-            </svg>
-            Cases
-          </a>
-
-          <a href="#banco-de-terras" id="banco-de-terras">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 21V9" />
-              <path d="M12 9c-3 1.5-5 4-5 7a5 5 0 0 0 10 0c0-3-2-5.5-5-7Z" />
-            </svg>
-            Banco de Terras
-          </a>
-
-          <a href="#radar-hungaro" id="radar-hungaro">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="8" />
-              <circle cx="12" cy="12" r="3" />
-              <path d="M12 4v3" />
-              <path d="M20 12h-3" />
-            </svg>
-            Radar Húngaro
-          </a>
-
-          <a href="#area-restrita" class="ahr" id="area-restrita">
-            <svg viewBox="0 0 24 24">
-              <rect x="5" y="10" width="14" height="10" rx="1.5" />
-              <path d="M8 10V7a4 4 0 0 1 8 0v3" />
-            </svg>
-            Amazon Heritage Reserve<br />Área Restrita
-          </a>
-
-          <a href="#privacidade" id="privacidade">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 3 5 6v5c0 5 3 8 7 10 4-2 7-5 7-10V6l-7-3Z" />
-            </svg>
-            Política de Privacidade
-          </a>
+      <div class="quick-row">
+        <nav class="quick-links" aria-label="Acessos rápidos">
+          <a href="#quem-somos" id="quem-somos">Quem Somos</a>
+          <a href="#cases" id="cases">Cases</a>
+          <a href="#banco-de-terras" id="banco-de-terras">Banco de Terras</a>
+          <a href="#radar-hungaro" id="radar-hungaro">Radar Húngaro</a>
+          <a href="#privacidade" id="privacidade">Política de Privacidade</a>
         </nav>
 
-        <div class="copyright">
-          © 2026 Húngaro Empresarial. Todos os direitos reservados.
-        </div>
+        <a href="#area-restrita" class="ahr-link" id="area-restrita">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="1.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          <span>Amazon Heritage Reserve — Área Restrita</span>
+        </a>
       </div>
-    </footer>
-  </div>
+
+      <div class="copyright">© 2026 Húngaro Empresarial. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    mobileMenu?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 </body>
 </html>
