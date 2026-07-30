@@ -11,19 +11,29 @@
     content="Consultoria empresarial com visão integrada em soluções ambientais, jurídicas e de negócios. Estratégia, segurança e estrutura para decisões complexas."
   />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J0L1QQQX13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-J0L1QQQX13");
+  </script>
+
   <style>
     :root {
       --bg: #050606;
-      --bg-soft: #0a0b0b;
       --line: rgba(255, 255, 255, 0.18);
-      --text: #f2f2f2;
-      --muted: rgba(255, 255, 255, 0.62);
-      --muted-2: rgba(255, 255, 255, 0.42);
+      --line-soft: rgba(255, 255, 255, 0.10);
+      --text: #f3f3f3;
+      --muted: rgba(255, 255, 255, 0.64);
+      --muted-soft: rgba(255, 255, 255, 0.42);
       --green: #0b7a3b;
+      --green-light: #12a64f;
       --red: #b31217;
-      --white: #e8e8e8;
-      --gold: #c8a75a;
+      --red-light: #e01820;
       --card: rgba(255, 255, 255, 0.035);
+      --card-hover: rgba(255, 255, 255, 0.06);
     }
 
     * {
@@ -36,14 +46,14 @@
 
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.055), transparent 34%),
-        radial-gradient(circle at 35% 32%, rgba(11, 122, 59, 0.12), transparent 28%),
-        radial-gradient(circle at 66% 20%, rgba(179, 18, 23, 0.10), transparent 24%),
-        linear-gradient(180deg, #080909 0%, #020303 100%);
+      min-height: 100vh;
       color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
-      min-height: 100vh;
+      background:
+        radial-gradient(circle at 62% 23%, rgba(179, 18, 23, 0.12), transparent 26%),
+        radial-gradient(circle at 34% 38%, rgba(11, 122, 59, 0.10), transparent 30%),
+        linear-gradient(180deg, #090a0a 0%, #030404 100%);
+      overflow-x: hidden;
     }
 
     a {
@@ -52,81 +62,115 @@
     }
 
     .site {
-      min-height: 100vh;
       width: 100%;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
+    .container {
+      width: min(1180px, calc(100% - 44px));
+      margin: 0 auto;
+    }
+
     .header {
-      width: 100%;
-      padding: 26px 26px 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      min-height: 92px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 10;
+      gap: 28px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    .wordmark {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1;
     }
 
-    .brand img {
-      width: 180px;
-      max-width: 52vw;
-      height: auto;
-      display: block;
+    .wordmark-main {
+      font-size: clamp(26px, 4.2vw, 44px);
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #f5f5f5;
+      text-transform: uppercase;
+      text-shadow: 0 8px 28px rgba(255, 255, 255, 0.10);
     }
+
+    .wordmark-sub {
+      margin-top: 6px;
+      font-size: clamp(11px, 1.5vw, 17px);
+      font-weight: 400;
+      letter-spacing: 9px;
+      color: rgba(255, 255, 255, 0.82);
+      text-transform: uppercase;
+    }
+
+    .brand-bars {
+      margin-top: 9px;
+      width: 174px;
+      max-width: 100%;
+      height: 4px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .brand-bars span:nth-child(1) { background: var(--green-light); }
+    .brand-bars span:nth-child(2) { background: #f2f2f2; }
+    .brand-bars span:nth-child(3) { background: var(--red-light); }
 
     .nav {
       display: none;
       align-items: center;
-      gap: 44px;
+      gap: 38px;
       font-size: 12px;
-      letter-spacing: 2.5px;
+      letter-spacing: 2.8px;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.78);
+      color: rgba(255, 255, 255, 0.72);
+      white-space: nowrap;
     }
 
     .nav a {
-      position: relative;
-      transition: color 0.2s ease;
+      transition: color 0.2s ease, border-color 0.2s ease;
     }
 
     .nav a:hover {
       color: #fff;
     }
 
-    .restricted-top {
+    .nav .restricted {
       border: 1px solid var(--line);
       border-radius: 8px;
-      padding: 12px 16px;
+      padding: 12px 15px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
     }
 
     .menu-button {
-      width: 42px;
-      height: 42px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
       border-radius: 50%;
       display: grid;
       place-items: center;
+      flex: 0 0 auto;
     }
 
     .menu-lines,
     .menu-lines::before,
     .menu-lines::after {
       content: "";
-      display: block;
-      width: 20px;
+      width: 21px;
       height: 2px;
-      background: #fff;
       border-radius: 99px;
+      background: #fff;
+      display: block;
     }
 
     .menu-lines {
@@ -145,19 +189,14 @@
 
     .hero {
       flex: 1;
-      width: 100%;
-      padding: 8px 22px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 30px 0 0;
     }
 
     .hero-grid {
-      width: min(1180px, 100%);
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
       align-items: center;
+      gap: 24px;
     }
 
     .hero-copy {
@@ -167,172 +206,118 @@
 
     .eyebrow {
       display: none;
-      color: var(--muted-2);
+      color: var(--muted-soft);
       text-transform: uppercase;
-      letter-spacing: 6px;
+      letter-spacing: 7px;
+      line-height: 1.9;
       font-size: 13px;
-      line-height: 1.8;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
     }
 
     .headline {
       display: none;
-      font-size: clamp(34px, 5vw, 74px);
+      margin: 0;
+      font-size: clamp(42px, 5.2vw, 76px);
       line-height: 1.05;
+      letter-spacing: -2.6px;
       font-weight: 300;
-      letter-spacing: -2px;
-      margin: 0 0 24px;
-      max-width: 720px;
+      color: #f4f4f4;
+      max-width: 690px;
     }
 
     .subhead {
       display: none;
+      margin: 26px 0 0;
+      max-width: 560px;
       color: var(--muted);
       font-size: 18px;
-      line-height: 1.7;
-      max-width: 560px;
-      margin: 0 0 30px;
+      line-height: 1.65;
     }
 
-    .button {
+    .hero-button {
       display: none;
-      align-items: center;
-      gap: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      padding: 17px 28px;
-      border-radius: 4px;
-      color: #fff;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-size: 12px;
-      transition: all 0.2s ease;
+      margin-top: 34px;
       width: fit-content;
+      border: 1px solid rgba(255, 255, 255, 0.30);
+      border-radius: 5px;
+      padding: 17px 28px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      color: #fff;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     }
 
-    .button:hover {
-      border-color: rgba(255, 255, 255, 0.55);
+    .hero-button:hover {
       background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.55);
+      transform: translateY(-1px);
     }
 
     .cube-stage {
-      width: 100%;
-      display: grid;
-      place-items: center;
       order: 1;
-      padding: 8px 0 0;
-    }
-
-    .cube-wrap {
-      width: min(74vw, 410px);
-      aspect-ratio: 1 / 1;
-      position: relative;
       display: grid;
       place-items: center;
-      filter: drop-shadow(0 40px 55px rgba(0, 0, 0, 0.78));
+      padding: 8px 0 6px;
     }
 
-    .cube {
-      width: 82%;
-      height: 82%;
-      position: relative;
-      transform: rotateX(58deg) rotateZ(-42deg);
-      transform-style: preserve-3d;
-    }
-
-    .cube-face {
-      position: absolute;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      gap: 5px;
-    }
-
-    .face-top {
-      width: 100%;
-      height: 100%;
-      transform: translateZ(96px);
-    }
-
-    .face-left {
-      width: 100%;
-      height: 100%;
-      transform: rotateY(90deg) translateZ(-96px);
-      transform-origin: left center;
-    }
-
-    .face-front {
-      width: 100%;
-      height: 100%;
-      transform: rotateX(90deg) translateZ(-96px);
-      transform-origin: center bottom;
-    }
-
-    .tile {
-      border-radius: 10px;
-      box-shadow:
-        inset 0 1px 8px rgba(255, 255, 255, 0.35),
-        inset 0 -8px 18px rgba(0, 0, 0, 0.38),
-        0 8px 14px rgba(0, 0, 0, 0.42);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-    }
-
-    .red {
-      background: linear-gradient(135deg, #f01616, #86080c);
-    }
-
-    .green {
-      background: linear-gradient(135deg, #08783e, #022c1c);
-    }
-
-    .white {
-      background: linear-gradient(135deg, #f4f4f4, #9e9e9e);
-    }
-
-    .cube-shadow {
-      position: absolute;
-      inset: auto 8% 2% 8%;
-      height: 18%;
-      background: radial-gradient(ellipse, rgba(255,255,255,0.11), rgba(0,0,0,0) 68%);
-      filter: blur(6px);
+    .cube-svg {
+      width: min(78vw, 430px);
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 45px 65px rgba(0, 0, 0, 0.84));
     }
 
     .mobile-title {
       text-align: center;
-      margin-top: 4px;
+      margin: 20px auto 0;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 6px;
-      font-size: clamp(14px, 3vw, 22px);
-      line-height: 1.8;
+      font-size: clamp(14px, 3.2vw, 22px);
+      line-height: 1.85;
+      max-width: 720px;
     }
 
     .select-label {
-      text-align: center;
-      margin: 22px 0 18px;
-      color: var(--muted-2);
+      width: min(980px, 100%);
+      margin: 28px auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      color: var(--muted-soft);
       text-transform: uppercase;
       letter-spacing: 8px;
-      font-size: 13px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .select-label::before,
+    .select-label::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: var(--line);
     }
 
     .areas {
-      width: min(100%, 980px);
+      width: min(1020px, 100%);
+      margin: 0 auto 38px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 0;
-      margin: 8px auto 34px;
-      border-top: 1px solid transparent;
     }
 
     .area {
+      position: relative;
       min-height: 126px;
-      padding: 12px 4px;
+      padding: 14px 4px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       gap: 10px;
-      position: relative;
       text-align: center;
       color: #fff;
     }
@@ -341,17 +326,17 @@
       content: "";
       position: absolute;
       right: 0;
-      top: 18%;
-      height: 64%;
+      top: 16%;
+      height: 68%;
       width: 1px;
-      background: rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.25);
     }
 
     .area-icon {
       width: 58px;
       height: 58px;
-      border: 1.5px solid rgba(255, 255, 255, 0.82);
       border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.78);
       display: grid;
       place-items: center;
       color: #fff;
@@ -363,68 +348,49 @@
       stroke: currentColor;
       fill: none;
       stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .area-title {
+      margin-top: 6px;
       font-size: clamp(14px, 2.8vw, 22px);
       text-transform: uppercase;
       letter-spacing: 5px;
-      margin-top: 6px;
     }
 
     .area-line {
       width: 32px;
       height: 2px;
-      background: #fff;
-      opacity: 0.75;
+      background: rgba(255, 255, 255, 0.75);
     }
 
-    .area-desc {
-      display: none;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.55;
-      max-width: 270px;
-      margin: 6px auto 0;
-    }
-
+    .area-desc,
     .area-action {
       display: none;
-      margin-top: 16px;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 11px;
-    }
-
-    .area.ambiental .area-icon,
-    .area.ambiental .area-line {
-      color: #25a936;
-      border-color: #25a936;
-      background: #25a936;
     }
 
     .area.ambiental .area-icon {
-      background: transparent;
+      color: var(--green-light);
+      border-color: var(--green-light);
     }
 
-    .area.juridico .area-icon,
-    .area.juridico .area-line {
-      color: #e31318;
-      border-color: #e31318;
-      background: #e31318;
+    .area.ambiental .area-line {
+      background: var(--green-light);
     }
 
     .area.juridico .area-icon {
-      background: transparent;
+      color: var(--red-light);
+      border-color: var(--red-light);
+    }
+
+    .area.juridico .area-line {
+      background: var(--red-light);
     }
 
     .footer {
-      width: min(1180px, calc(100% - 34px));
-      margin: auto auto 0;
+      margin-top: auto;
       border-top: 1px solid var(--line);
-      color: var(--muted);
-      padding-bottom: 18px;
     }
 
     .socials {
@@ -434,7 +400,7 @@
     }
 
     .social {
-      min-height: 76px;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -442,6 +408,7 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 10px;
+      color: var(--muted);
       position: relative;
     }
 
@@ -451,7 +418,7 @@
       right: 0;
       height: 44%;
       width: 1px;
-      background: rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.20);
     }
 
     .social svg {
@@ -460,21 +427,19 @@
       stroke: #fff;
       fill: none;
       stroke-width: 1.6;
-    }
-
-    .social .fill-icon {
-      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .quick {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 0;
       border-bottom: 1px solid var(--line);
     }
 
     .quick a {
       min-height: 66px;
+      padding: 10px 8px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -482,8 +447,9 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 10px;
+      line-height: 1.4;
+      color: var(--muted);
       text-align: center;
-      padding: 10px 8px;
       position: relative;
     }
 
@@ -493,7 +459,7 @@
       right: 0;
       height: 42%;
       width: 1px;
-      background: rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.20);
     }
 
     .quick svg {
@@ -502,6 +468,8 @@
       stroke: #fff;
       fill: none;
       stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
       flex: 0 0 auto;
     }
 
@@ -510,37 +478,29 @@
       color: rgba(255, 255, 255, 0.78);
     }
 
-    .privacy {
-      grid-column: span 1;
-    }
-
     .copyright {
+      padding: 16px 0 18px;
       text-align: center;
-      color: var(--muted-2);
+      color: var(--muted-soft);
       font-size: 12px;
-      padding-top: 16px;
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
     @media (min-width: 720px) {
-      .header {
-        padding: 32px 42px 14px;
+      .container {
+        width: min(1180px, calc(100% - 72px));
       }
 
-      .brand img {
-        width: 200px;
+      .header-inner {
+        min-height: 100px;
       }
 
-      .cube-wrap {
-        width: min(48vw, 430px);
-      }
-
-      .mobile-title {
-        font-size: 22px;
+      .cube-svg {
+        width: min(48vw, 440px);
       }
 
       .areas {
-        margin-top: 22px;
+        margin-top: 8px;
       }
 
       .area {
@@ -555,10 +515,6 @@
       .area svg {
         width: 40px;
         height: 40px;
-      }
-
-      .area-title {
-        font-size: 22px;
       }
 
       .quick {
@@ -576,22 +532,17 @@
         right: 0;
         height: 42%;
         width: 1px;
-        background: rgba(255, 255, 255, 0.22);
+        background: rgba(255, 255, 255, 0.20);
       }
     }
 
-    @media (min-width: 1050px) {
-      .site {
-        min-height: 100vh;
+    @media (min-width: 1060px) {
+      .container {
+        width: min(1220px, calc(100% - 96px));
       }
 
-      .header {
-        padding: 28px 64px 18px;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .brand img {
-        width: 210px;
+      .header-inner {
+        min-height: 104px;
       }
 
       .nav {
@@ -603,13 +554,13 @@
       }
 
       .hero {
-        padding: 42px 64px 0;
+        padding-top: 46px;
       }
 
       .hero-grid {
-        grid-template-columns: 0.95fr 1.05fr;
-        gap: 70px;
-        min-height: 390px;
+        grid-template-columns: 0.93fr 1.07fr;
+        gap: 84px;
+        min-height: 430px;
       }
 
       .hero-copy {
@@ -625,108 +576,122 @@
       .eyebrow,
       .headline,
       .subhead,
-      .button {
-        display: flex;
+      .hero-button {
+        display: block;
       }
 
-      .eyebrow,
-      .headline,
-      .subhead {
-        display: block;
+      .hero-button {
+        display: inline-flex;
       }
 
       .mobile-title {
         display: none;
       }
 
-      .cube-wrap {
-        width: min(36vw, 430px);
+      .cube-svg {
+        width: min(38vw, 500px);
       }
 
       .select-label {
-        width: min(100%, 980px);
-        display: flex;
-        align-items: center;
-        gap: 26px;
-        justify-content: center;
-        margin: 26px auto 18px;
-      }
-
-      .select-label::before,
-      .select-label::after {
-        content: "";
-        height: 1px;
-        flex: 1;
-        background: var(--line);
+        margin-top: 26px;
+        margin-bottom: 20px;
       }
 
       .areas {
         grid-template-columns: repeat(3, 1fr);
         gap: 22px;
-        width: min(100%, 1040px);
+        width: min(1040px, 100%);
+        margin-bottom: 42px;
       }
 
       .area {
+        min-height: 214px;
         border: 1px solid var(--line);
         background: var(--card);
-        min-height: 210px;
-        padding: 28px 24px;
         border-radius: 4px;
+        padding: 30px 24px;
         justify-content: center;
-        transition: all 0.2s ease;
+        transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       }
 
       .area:hover {
         transform: translateY(-3px);
+        background: var(--card-hover);
         border-color: rgba(255, 255, 255, 0.32);
-        background: rgba(255, 255, 255, 0.055);
       }
 
       .area:not(:last-child)::after {
         display: none;
       }
 
-      .area-desc,
+      .area-desc {
+        display: block;
+        margin: 6px auto 0;
+        max-width: 270px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
       .area-action {
         display: block;
-      }
-
-      .footer {
-        width: min(1180px, calc(100% - 120px));
         margin-top: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 11px;
+        color: #fff;
       }
 
-      .quick {
-        grid-template-columns: repeat(6, 1fr);
-      }
-
-      .ahr,
-      .privacy {
-        grid-column: auto;
-      }
-
-      .quick a {
-        min-height: 62px;
+      .footer .container {
+        width: min(1180px, calc(100% - 96px));
       }
 
       .social {
         min-height: 68px;
         font-size: 11px;
       }
+
+      .quick {
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      .ahr {
+        grid-column: auto;
+      }
+
+      .quick a {
+        min-height: 62px;
+      }
     }
 
-    @media (max-width: 430px) {
-      .header {
-        padding-left: 18px;
-        padding-right: 18px;
+    @media (max-width: 460px) {
+      .container {
+        width: min(100% - 28px, 1180px);
       }
 
-      .brand img {
-        width: 165px;
+      .header-inner {
+        min-height: 84px;
       }
 
-      .cube-wrap {
-        width: min(82vw, 340px);
+      .wordmark-main {
+        font-size: 26px;
+      }
+
+      .wordmark-sub {
+        letter-spacing: 7px;
+      }
+
+      .brand-bars {
+        width: 142px;
+      }
+
+      .cube-svg {
+        width: min(84vw, 340px);
+      }
+
+      .select-label {
+        letter-spacing: 5px;
+        font-size: 11px;
       }
 
       .area-icon {
@@ -740,19 +705,20 @@
       }
 
       .area-title {
-        letter-spacing: 3.5px;
+        letter-spacing: 3.2px;
       }
 
       .social {
+        min-height: 74px;
         flex-direction: column;
         gap: 6px;
-        min-height: 74px;
         font-size: 9px;
+        letter-spacing: 1.5px;
       }
 
       .quick a {
         font-size: 9px;
-        letter-spacing: 1.6px;
+        letter-spacing: 1.5px;
       }
     }
   </style>
@@ -761,203 +727,345 @@
 <body>
   <div class="site">
     <header class="header">
-      <a href="/" class="brand" aria-label="Húngaro Empresarial">
-        <img src="logo.png" alt="Húngaro Empresarial" />
-      </a>
+      <div class="container header-inner">
+        <a href="/" class="wordmark" aria-label="Húngaro Empresarial">
+          <span class="wordmark-main">Húngaro</span>
+          <span class="wordmark-sub">Empresarial</span>
+          <span class="brand-bars" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </a>
 
-      <nav class="nav" aria-label="Menu principal">
-        <a href="#quem-somos">Quem Somos</a>
-        <a href="#cases">Cases</a>
-        <a href="#banco-de-terras">Banco de Terras</a>
-        <a href="#radar-hungaro">Radar Húngaro</a>
-        <a href="#area-restrita" class="restricted-top">🔒 Área Restrita</a>
-      </nav>
+        <nav class="nav" aria-label="Menu principal">
+          <a href="#quem-somos">Quem Somos</a>
+          <a href="#cases">Cases</a>
+          <a href="#banco-de-terras">Banco de Terras</a>
+          <a href="#radar-hungaro">Radar Húngaro</a>
+          <a href="#area-restrita" class="restricted">🔒 Área Restrita</a>
+        </nav>
 
-      <a href="#menu" class="menu-button" aria-label="Abrir menu">
-        <span class="menu-lines"></span>
-      </a>
+        <a href="#menu" class="menu-button" aria-label="Abrir menu">
+          <span class="menu-lines"></span>
+        </a>
+      </div>
     </header>
 
     <main class="hero">
-      <section class="hero-grid" aria-label="Apresentação Húngaro Empresarial">
-        <div class="hero-copy">
-          <div class="eyebrow">
-            Consultoria empresarial<br />
-            com visão integrada
-          </div>
-
-          <h1 class="headline">
-            Consultoria empresarial<br />
-            com visão integrada
-          </h1>
-
-          <p class="subhead">
-            Estratégia, segurança e estrutura para decisões ambientais,
-            jurídicas e empresariais complexas.
-          </p>
-
-          <a href="#areas" class="button">
-            Conhecer a Húngaro <span>→</span>
-          </a>
-        </div>
-
-        <div class="cube-stage" aria-hidden="true">
-          <div class="cube-wrap">
-            <div class="cube-shadow"></div>
-            <div class="cube">
-              <div class="cube-face face-top">
-                <span class="tile red"></span><span class="tile red"></span><span class="tile red"></span>
-                <span class="tile red"></span><span class="tile red"></span><span class="tile red"></span>
-                <span class="tile red"></span><span class="tile red"></span><span class="tile red"></span>
-              </div>
-
-              <div class="cube-face face-left">
-                <span class="tile green"></span><span class="tile green"></span><span class="tile green"></span>
-                <span class="tile green"></span><span class="tile green"></span><span class="tile green"></span>
-                <span class="tile green"></span><span class="tile green"></span><span class="tile green"></span>
-              </div>
-
-              <div class="cube-face face-front">
-                <span class="tile white"></span><span class="tile white"></span><span class="tile white"></span>
-                <span class="tile white"></span><span class="tile white"></span><span class="tile white"></span>
-                <span class="tile white"></span><span class="tile white"></span><span class="tile white"></span>
-              </div>
+      <div class="container">
+        <section class="hero-grid" aria-label="Apresentação Húngaro Empresarial">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              Consultoria empresarial<br />
+              com visão integrada
             </div>
+
+            <h1 class="headline">
+              Consultoria empresarial<br />
+              com visão integrada
+            </h1>
+
+            <p class="subhead">
+              Estratégia, segurança e estrutura para decisões ambientais,
+              jurídicas e empresariais complexas.
+            </p>
+
+            <a href="#areas" class="hero-button">
+              Conhecer a Húngaro&nbsp;&nbsp; →
+            </a>
           </div>
+
+          <div class="cube-stage" aria-hidden="true">
+            <svg class="cube-svg" viewBox="0 0 520 480" role="img">
+              <defs>
+                <linearGradient id="redFace" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#f51d22"/>
+                  <stop offset="55%" stop-color="#b90f16"/>
+                  <stop offset="100%" stop-color="#72070b"/>
+                </linearGradient>
+
+                <linearGradient id="greenFace" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#0d8c47"/>
+                  <stop offset="55%" stop-color="#075b32"/>
+                  <stop offset="100%" stop-color="#022916"/>
+                </linearGradient>
+
+                <linearGradient id="whiteFace" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="55%" stop-color="#cfcfcf"/>
+                  <stop offset="100%" stop-color="#8f8f8f"/>
+                </linearGradient>
+
+                <filter id="cubeShadow" x="-40%" y="-40%" width="180%" height="180%">
+                  <feDropShadow dx="0" dy="28" stdDeviation="20" flood-color="#000000" flood-opacity="0.78"/>
+                </filter>
+
+                <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="2.6" result="blur"/>
+                  <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <ellipse cx="260" cy="425" rx="175" ry="34" fill="rgba(255,255,255,0.08)" />
+
+              <g filter="url(#cubeShadow)">
+                <polygon points="260,48 430,138 260,228 90,138" fill="url(#redFace)" />
+                <polygon points="90,138 260,228 260,420 90,330" fill="url(#greenFace)" />
+                <polygon points="260,228 430,138 430,330 260,420" fill="url(#whiteFace)" />
+
+                <g stroke="rgba(0,0,0,0.48)" stroke-width="5" stroke-linecap="round">
+                  <path d="M203 78 L373 168" />
+                  <path d="M147 108 L317 198" />
+                  <path d="M317 78 L147 168" />
+                  <path d="M373 108 L203 198" />
+
+                  <path d="M147 168 L147 360" />
+                  <path d="M203 198 L203 390" />
+                  <path d="M90 202 L260 292" />
+                  <path d="M90 266 L260 356" />
+
+                  <path d="M317 198 L317 390" />
+                  <path d="M373 168 L373 360" />
+                  <path d="M260 292 L430 202" />
+                  <path d="M260 356 L430 266" />
+                </g>
+
+                <g stroke="rgba(255,255,255,0.22)" stroke-width="2">
+                  <path d="M260 48 L430 138 L430 330 L260 420 L90 330 L90 138 Z" fill="none" />
+                  <path d="M90 138 L260 228 L430 138" fill="none" />
+                  <path d="M260 228 L260 420" fill="none" />
+                </g>
+
+                <g filter="url(#softGlow)">
+                  <path
+                    d="M247 206
+                       C247 193 255 184 268 184
+                       L292 184
+                       C305 184 313 193 313 206
+                       L313 392
+                       L285 392
+                       L285 316
+                       C285 307 279 301 270 301
+                       C261 301 255 307 255 316
+                       L255 392
+                       L227 392
+                       L227 206
+                       C227 193 235 184 248 184
+                       L247 206 Z"
+                    fill="rgba(255,255,255,0.82)"
+                  />
+                </g>
+              </g>
+            </svg>
+          </div>
+        </section>
+
+        <div class="mobile-title">
+          Consultoria empresarial<br />
+          com visão integrada
         </div>
-      </section>
 
-      <div class="mobile-title">
-        Consultoria empresarial<br />
-        com visão integrada
+        <div class="select-label" id="areas">
+          Selecione uma área
+        </div>
+
+        <section class="areas">
+          <a href="#ambiental" class="area ambiental">
+            <div class="area-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 21V9" />
+                <path d="M12 9c-2.6 1.4-5 4.2-5 7.2 0 2.7 2.2 4.8 5 4.8s5-2.1 5-4.8C17 13.2 14.6 10.4 12 9Z" />
+                <path d="M12 15l3-3" />
+                <path d="M12 17l-3-3" />
+              </svg>
+            </div>
+
+            <div class="area-title">Ambiental</div>
+            <div class="area-line"></div>
+
+            <p class="area-desc">
+              Soluções ambientais com segurança técnica, regularização e responsabilidade.
+            </p>
+
+            <span class="area-action">Acessar área →</span>
+          </a>
+
+          <a href="#juridico" class="area juridico">
+            <div class="area-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v18" />
+                <path d="M5 7h14" />
+                <path d="M7 7l-4 7h8l-4-7Z" />
+                <path d="M17 7l-4 7h8l-4-7Z" />
+                <path d="M9 21h6" />
+              </svg>
+            </div>
+
+            <div class="area-title">Jurídico</div>
+            <div class="area-line"></div>
+
+            <p class="area-desc">
+              Estratégia jurídica sólida para riscos, contratos e decisões complexas.
+            </p>
+
+            <span class="area-action">Acessar área →</span>
+          </a>
+
+          <a href="#negocios" class="area negocios">
+            <div class="area-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 19h16" />
+                <path d="M6 17v-5" />
+                <path d="M11 17V9" />
+                <path d="M16 17V6" />
+                <path d="M5 10l5-4 4 3 5-6" />
+                <path d="M19 3v5h-5" />
+              </svg>
+            </div>
+
+            <div class="area-title">Negócios</div>
+            <div class="area-line"></div>
+
+            <p class="area-desc">
+              Estrutura e inteligência para gerar valor, eficiência e crescimento.
+            </p>
+
+            <span class="area-action">Acessar área →</span>
+          </a>
+        </section>
       </div>
-
-      <div class="select-label" id="areas">
-        Selecione uma área
-      </div>
-
-      <section class="areas">
-        <a href="#ambiental" class="area ambiental">
-          <div class="area-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 21V9" />
-              <path d="M12 9c-2.6 1.4-5 4.2-5 7.2 0 2.7 2.2 4.8 5 4.8s5-2.1 5-4.8C17 13.2 14.6 10.4 12 9Z" />
-              <path d="M12 15l3-3" />
-              <path d="M12 17l-3-3" />
-            </svg>
-          </div>
-          <div class="area-title">Ambiental</div>
-          <div class="area-line"></div>
-          <p class="area-desc">
-            Soluções ambientais com segurança técnica, regularização e responsabilidade.
-          </p>
-          <span class="area-action">Acessar área →</span>
-        </a>
-
-        <a href="#juridico" class="area juridico">
-          <div class="area-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 3v18" />
-              <path d="M5 7h14" />
-              <path d="M7 7l-4 7h8l-4-7Z" />
-              <path d="M17 7l-4 7h8l-4-7Z" />
-              <path d="M9 21h6" />
-            </svg>
-          </div>
-          <div class="area-title">Jurídico</div>
-          <div class="area-line"></div>
-          <p class="area-desc">
-            Estratégia jurídica sólida para riscos, contratos e decisões complexas.
-          </p>
-          <span class="area-action">Acessar área →</span>
-        </a>
-
-        <a href="#negocios" class="area negocios">
-          <div class="area-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 19h16" />
-              <path d="M6 17v-5" />
-              <path d="M11 17V9" />
-              <path d="M16 17V6" />
-              <path d="M5 10l5-4 4 3 5-6" />
-              <path d="M19 3v5h-5" />
-            </svg>
-          </div>
-          <div class="area-title">Negócios</div>
-          <div class="area-line"></div>
-          <p class="area-desc">
-            Estrutura e inteligência para gerar valor, eficiência e crescimento.
-          </p>
-          <span class="area-action">Acessar área →</span>
-        </a>
-      </section>
     </main>
 
     <footer class="footer">
-      <div class="socials" aria-label="Canais de contato">
-        <a href="#" class="social" aria-label="Facebook">
-          <svg viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 0 0-2 2v2H9v3h2v6h3v-6h2.3l.7-3H14v-1.5c0-.8.3-1.5 1.5-1.5H17V6.2A12 12 0 0 0 15 6c-2.6 0-4 1.6-4 4v2H8v3h3v6" /></svg>
-          <span>Facebook</span>
-        </a>
+      <div class="container">
+        <div class="socials" aria-label="Canais de contato">
+          <a
+            href="https://www.facebook.com/hungaroempresarial"
+            class="social"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M15 8h-2a2 2 0 0 0-2 2v2H9v3h2v6h3v-6h2.3l.7-3H14v-1.5c0-.8.3-1.5 1.5-1.5H17V6.2A12 12 0 0 0 15 6c-2.6 0-4 1.6-4 4v2H8v3h3v6" />
+            </svg>
+            <span>Facebook</span>
+          </a>
 
-        <a href="https://wa.me/5598986138287" class="social" aria-label="WhatsApp">
-          <svg viewBox="0 0 24 24">
-            <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z" />
-            <path d="M9 8.5c.4 3 2.4 5 5.5 6 .6.2 1.2-.6 1.5-1.1" />
-          </svg>
-          <span>WhatsApp</span>
-        </a>
+          <a
+            href="https://wa.me/5598986138287"
+            class="social"
+            aria-label="WhatsApp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z" />
+              <path d="M9 8.5c.4 3 2.4 5 5.5 6 .6.2 1.2-.6 1.5-1.1" />
+            </svg>
+            <span>WhatsApp</span>
+          </a>
 
-        <a href="mailto:negocios@hungaroempresarial.com.br" class="social" aria-label="E-mail">
-          <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z" /><path d="m4 7 8 6 8-6" /></svg>
-          <span>E-mail</span>
-        </a>
+          <a
+            href="mailto:negocios@hungaroempresarial.com.br"
+            class="social"
+            aria-label="E-mail"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M4 6h16v12H4z" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+            <span>E-mail</span>
+          </a>
 
-        <a href="#" class="social" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3.3" /><path d="M16.7 7.3h.1" /></svg>
-          <span>Instagram</span>
-        </a>
+          <a
+            href="https://www.instagram.com/hungaroempresarial"
+            class="social"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24">
+              <rect x="5" y="5" width="14" height="14" rx="4" />
+              <circle cx="12" cy="12" r="3.3" />
+              <path d="M16.7 7.3h.1" />
+            </svg>
+            <span>Instagram</span>
+          </a>
 
-        <a href="#" class="social" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M6 10v8" /><path d="M6 7h.1" /><path d="M10 18v-8" /><path d="M10 13c0-1.6 1.2-3 3-3s3 1.2 3 3v5" /></svg>
-          <span>LinkedIn</span>
-        </a>
-      </div>
+          <a
+            href="https://www.linkedin.com/in/h%C3%BAngaro-empresarial-871218426"
+            class="social"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M6 10v8" />
+              <path d="M6 7h.1" />
+              <path d="M10 18v-8" />
+              <path d="M10 13c0-1.6 1.2-3 3-3s3 1.2 3 3v5" />
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
 
-      <nav class="quick" aria-label="Acessos rápidos">
-        <a href="#quem-somos" id="quem-somos">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3" /><path d="M5 20c1.2-4 12.8-4 14 0" /></svg>
-          Quem Somos
-        </a>
+        <nav class="quick" aria-label="Acessos rápidos">
+          <a href="#quem-somos" id="quem-somos">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="3" />
+              <path d="M5 20c1.2-4 12.8-4 14 0" />
+            </svg>
+            Quem Somos
+          </a>
 
-        <a href="#cases" id="cases">
-          <svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="1.5" /><path d="M9 7V5h6v2" /></svg>
-          Cases
-        </a>
+          <a href="#cases" id="cases">
+            <svg viewBox="0 0 24 24">
+              <rect x="4" y="7" width="16" height="12" rx="1.5" />
+              <path d="M9 7V5h6v2" />
+            </svg>
+            Cases
+          </a>
 
-        <a href="#banco-de-terras" id="banco-de-terras">
-          <svg viewBox="0 0 24 24"><path d="M12 21V9" /><path d="M12 9c-3 1.5-5 4-5 7a5 5 0 0 0 10 0c0-3-2-5.5-5-7Z" /></svg>
-          Banco de Terras
-        </a>
+          <a href="#banco-de-terras" id="banco-de-terras">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21V9" />
+              <path d="M12 9c-3 1.5-5 4-5 7a5 5 0 0 0 10 0c0-3-2-5.5-5-7Z" />
+            </svg>
+            Banco de Terras
+          </a>
 
-        <a href="#radar-hungaro" id="radar-hungaro">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="3" /><path d="M12 4v3" /><path d="M20 12h-3" /></svg>
-          Radar Húngaro
-        </a>
+          <a href="#radar-hungaro" id="radar-hungaro">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="8" />
+              <circle cx="12" cy="12" r="3" />
+              <path d="M12 4v3" />
+              <path d="M20 12h-3" />
+            </svg>
+            Radar Húngaro
+          </a>
 
-        <a href="#area-restrita" class="ahr" id="area-restrita">
-          <svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="1.5" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>
-          Amazon Heritage Reserve<br />Área Restrita
-        </a>
+          <a href="#area-restrita" class="ahr" id="area-restrita">
+            <svg viewBox="0 0 24 24">
+              <rect x="5" y="10" width="14" height="10" rx="1.5" />
+              <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+            </svg>
+            Amazon Heritage Reserve<br />Área Restrita
+          </a>
 
-        <a href="#privacidade" class="privacy" id="privacidade">
-          <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 5 3 8 7 10 4-2 7-5 7-10V6l-7-3Z" /></svg>
-          Política de Privacidade
-        </a>
-      </nav>
+          <a href="#privacidade" id="privacidade">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3 5 6v5c0 5 3 8 7 10 4-2 7-5 7-10V6l-7-3Z" />
+            </svg>
+            Política de Privacidade
+          </a>
+        </nav>
 
-      <div class="copyright">
-        © 2026 Húngaro Empresarial. Todos os direitos reservados.
+        <div class="copyright">
+          © 2026 Húngaro Empresarial. Todos os direitos reservados.
+        </div>
       </div>
     </footer>
   </div>
