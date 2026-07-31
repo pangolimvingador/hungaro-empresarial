@@ -7,198 +7,745 @@
   <title>Húngaro Empresarial</title>
   <meta
     name="description"
-    content="Consultoria estratégica para empresas, produtores rurais e investidores, com foco em passivos ambientais, embargos, autuações, reserva legal, ativos rurais e desenvolvimento de negócios."
+    content="Consultoria empresarial com visão integrada em soluções ambientais, jurídicas e de negócios. Estratégia, segurança e estrutura para decisões complexas."
   />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J0L1QQQX13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J0L1QQQX13');
+  </script>
+
   <style>
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      color: #111;
-      background: #10261f;
+    :root {
+      --bg: #030404;
+      --bg-soft: #080909;
+      --text: #f1f1f1;
+      --muted: rgba(255, 255, 255, 0.62);
+      --muted-soft: rgba(255, 255, 255, 0.42);
+      --line: rgba(255, 255, 255, 0.19);
+      --line-soft: rgba(255, 255, 255, 0.10);
+      --green: #17a447;
+      --red: #e31b23;
+      --card: rgba(255, 255, 255, 0.025);
+      --card-hover: rgba(255, 255, 255, 0.05);
+      --max: 1560px;
     }
 
-    .page {
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
       min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--text);
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 66% 25%, rgba(165, 14, 20, 0.11), transparent 27%),
+        radial-gradient(circle at 27% 40%, rgba(5, 94, 48, 0.10), transparent 29%),
+        linear-gradient(180deg, #080909 0%, var(--bg) 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .container {
+      width: min(var(--max), calc(100% - 64px));
+      margin-inline: auto;
+    }
+
+    /* Header */
+    .header {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      min-height: 98px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+    }
+
+    .wordmark {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1;
+      flex: 0 0 auto;
+    }
+
+    .wordmark-main {
+      font-size: 34px;
+      font-weight: 650;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .wordmark-sub {
+      margin-top: 7px;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.80);
+    }
+
+    .brand-bars {
+      width: 196px;
+      height: 3px;
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .brand-bars span:nth-child(1) { background: var(--green); }
+    .brand-bars span:nth-child(2) { background: #f2f2f2; }
+    .brand-bars span:nth-child(3) { background: var(--red); }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(28px, 3.1vw, 62px);
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.68);
+      white-space: nowrap;
+    }
+
+    .desktop-nav a {
+      transition: color .2s ease;
+    }
+
+    .desktop-nav a:hover { color: #fff; }
+
+    .restricted-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      place-items: center;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: #fff;
+      border-radius: 99px;
+    }
+
+    .menu-toggle span { position: relative; }
+    .menu-toggle span::before { position: absolute; top: -7px; }
+    .menu-toggle span::after { position: absolute; top: 7px; }
+
+    .mobile-menu {
+      display: none;
+      border-top: 1px solid var(--line-soft);
+      padding: 8px 0 18px;
+    }
+
+    .mobile-menu.is-open { display: grid; }
+
+    .mobile-menu a {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line-soft);
+      font-size: 12px;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 22px 0 14px;
+    }
+
+    .hero-grid {
+      min-height: 408px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(420px, .96fr);
+      align-items: center;
+      gap: 64px;
+    }
+
+    .hero-copy {
+      padding-left: 64px;
+    }
+
+    .headline {
+      margin: 0;
+      font-size: clamp(48px, 4vw, 68px);
+      line-height: 1.06;
+      letter-spacing: -2.3px;
+      font-weight: 300;
+      color: #f3f3f3;
+    }
+
+    .headline span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .subhead {
+      margin: 22px 0 0;
+      max-width: 600px;
+      font-size: 18px;
+      line-height: 1.62;
+      color: var(--muted);
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 28px;
+      padding: 16px 31px;
+      border: 1px solid rgba(255, 255, 255, 0.31);
+      border-radius: 4px;
+      font-size: 12px;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+
+    .hero-button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .cube-stage {
+      display: grid;
+      place-items: center;
+      min-width: 0;
+    }
+
+    .cube-image {
+      width: min(100%, 550px);
+      height: auto;
+      display: block;
+      object-fit: contain;
+      filter: drop-shadow(0 30px 32px rgba(0, 0, 0, .48));
+    }
+
+    /* Áreas */
+    .area-intro {
+      width: min(1320px, calc(100% - 112px));
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted-soft);
+      font-size: 13px;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .area-intro::before,
+    .area-intro::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .areas {
+      width: min(1320px, calc(100% - 112px));
+      margin: 0 auto 26px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .area-card {
+      min-height: 214px;
+      padding: 24px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      background: var(--card);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .area-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.34);
+      background: var(--card-hover);
+    }
+
+    .area-icon {
+      width: 66px;
+      height: 66px;
+      display: grid;
+      place-items: center;
+      border: 1.5px solid rgba(255, 255, 255, 0.78);
+      border-radius: 50%;
+    }
+
+    .area-icon svg {
+      width: 35px;
+      height: 35px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .area-card.ambiental .area-icon { color: var(--green); border-color: var(--green); }
+    .area-card.juridico .area-icon { color: var(--red); border-color: var(--red); }
+
+    .area-title {
+      margin: 13px 0 0;
+      font-size: 21px;
+      font-weight: 400;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    .area-accent {
+      width: 34px;
+      height: 2px;
+      margin: 9px 0 8px;
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .ambiental .area-accent { background: var(--green); }
+    .juridico .area-accent { background: var(--red); }
+
+    .area-description {
+      margin: 0;
+      max-width: 310px;
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .area-action {
+      margin-top: 13px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .ambiental .area-action { color: var(--green); }
+    .juridico .area-action { color: var(--red); }
+
+    /* Footer */
+    .footer-shell {
+      width: min(1420px, calc(100% - 72px));
+      margin-inline: auto;
+      border-top: 1px solid var(--line);
+    }
+
+    .social-row {
+      min-height: 68px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .social-link {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px;
-    }
-
-    .card {
-      max-width: 980px;
-      width: 100%;
-      background: #fffdf8;
-      padding: 55px 60px;
-      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.22);
-      border: 1px solid #e6e1d8;
-      text-align: center;
-    }
-
-    .logo {
-      max-width: 300px;
-      margin-bottom: 12px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .line {
-      width: 120px;
-      height: 2px;
-      background: linear-gradient(to right, #b31217 50%, #006b3f 50%);
-      margin: 24px auto 34px;
-    }
-
-    .text {
-      font-family: Arial, sans-serif;
-      font-size: 18px;
-      line-height: 1.7;
-      max-width: 760px;
-      margin: 0 auto;
-      color: #333;
-    }
-
-    .services {
-      margin-top: 38px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      font-family: Arial, sans-serif;
-    }
-
-    .service {
-      border: 1px solid #e2ddd3;
-      padding: 22px;
-      font-size: 15px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      background: #faf9f6;
-      transition: all 0.25s ease;
-    }
-
-    .service:hover {
-      border-color: #006b3f;
-      background: #fffdf8;
-      transform: translateY(-2px);
-    }
-
-    .contact {
-      margin-top: 44px;
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.9;
-      color: #222;
-    }
-
-    .contact a {
-      color: #006b3f;
-      text-decoration: none;
-    }
-
-    .contact a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 40px;
-      font-family: Arial, sans-serif;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.70);
       font-size: 12px;
-      color: #777;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
-    @media (max-width: 900px) {
-      .services {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .social-link:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 1px;
+      height: 34px;
+      background: var(--line);
     }
 
-    @media (max-width: 700px) {
-      .page {
-        padding: 24px 14px;
-      }
+    .social-link svg {
+      width: 25px;
+      height: 25px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
 
-      .card {
-        padding: 42px 24px;
-      }
+    .quick-row {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      border-bottom: 1px solid var(--line);
+    }
 
-      .logo {
-        max-width: 220px;
-        margin-bottom: 8px;
-      }
+    .quick-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
 
-      .line {
-        margin: 20px auto 30px;
-      }
+    .quick-links a {
+      position: relative;
+      padding: 10px 28px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.57);
+    }
 
-      .text {
-        font-size: 16px;
-        line-height: 1.65;
-      }
+    .quick-links a:first-child { padding-left: 14px; }
 
-      .services {
+    .quick-links a:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 1px;
+      height: 24px;
+      transform: translateY(-50%);
+      background: var(--line);
+    }
+
+    .ahr-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding-right: 14px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.64);
+      white-space: nowrap;
+    }
+
+    .ahr-link svg {
+      width: 21px;
+      height: 21px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 1.6;
+    }
+
+    .copyright {
+      padding: 12px 0 15px;
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.34);
+    }
+
+    /* Tablet */
+    @media (max-width: 1180px) {
+      .container { width: min(100% - 48px, var(--max)); }
+      .desktop-nav { gap: 24px; }
+      .hero-grid { grid-template-columns: 1fr 1fr; gap: 42px; }
+      .hero-copy { padding-left: 20px; }
+      .headline { font-size: 52px; }
+      .cube-image { width: min(100%, 440px); }
+      .area-intro,
+      .areas { width: min(100% - 56px, 1120px); }
+    }
+
+    @media (max-width: 980px) {
+      .desktop-nav { display: none; }
+      .menu-toggle { display: grid; }
+
+      .hero { padding-top: 16px; }
+      .hero-grid {
+        min-height: auto;
         grid-template-columns: 1fr;
+        gap: 6px;
       }
 
-      .service {
-        padding: 20px;
-        font-size: 14px;
+      .cube-stage { order: 1; }
+      .hero-copy { order: 2; padding: 0; text-align: center; }
+      .cube-image { width: min(72vw, 430px); }
+      .headline { font-size: clamp(38px, 6.5vw, 58px); }
+      .headline span { white-space: normal; }
+      .subhead { margin-inline: auto; }
+      .hero-button { margin-top: 24px; }
+      .area-intro { margin-top: 26px; }
+      .areas { gap: 14px; }
+      .area-card { min-height: 184px; padding: 20px 18px; }
+      .quick-row { align-items: stretch; flex-direction: column; gap: 0; }
+      .quick-links { justify-content: center; border-bottom: 1px solid var(--line); }
+      .quick-links a { padding-block: 18px; }
+      .ahr-link { justify-content: center; padding: 18px 12px; }
+    }
+
+    /* Smartphone */
+    @media (max-width: 680px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      .header-inner { min-height: 84px; }
+      .wordmark-main { font-size: 27px; }
+      .wordmark-sub { font-size: 11px; letter-spacing: 6px; }
+      .brand-bars { width: 156px; }
+
+      .hero { padding-top: 10px; }
+      .cube-image { width: min(84vw, 350px); }
+      .headline { font-size: 34px; line-height: 1.08; letter-spacing: -1px; }
+      .subhead { font-size: 16px; line-height: 1.55; }
+      .hero-button { padding: 14px 22px; font-size: 11px; }
+
+      .area-intro {
+        width: calc(100% - 28px);
+        gap: 12px;
+        margin-top: 24px;
+        font-size: 10px;
+        letter-spacing: 4px;
       }
 
-      .contact {
-        font-size: 15px;
+      .areas {
+        width: calc(100% - 28px);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
       }
 
-      footer {
-        font-size: 11px;
-        line-height: 1.6;
+      .area-card {
+        min-height: 130px;
+        padding: 10px 4px;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
       }
+
+      .area-card:not(:last-child) {
+        border-right: 1px solid var(--line);
+      }
+
+      .area-card:hover { transform: none; background: transparent; }
+      .area-icon { width: 52px; height: 52px; }
+      .area-icon svg { width: 28px; height: 28px; }
+      .area-title { font-size: 13px; letter-spacing: 3px; }
+      .area-description { display: none; }
+      .area-action { display: none; }
+      .area-accent { margin-top: 4px; }
+
+      .footer-shell { width: calc(100% - 28px); }
+      .social-row { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .social-link { min-height: 78px; flex-direction: column; gap: 7px; font-size: 8px; letter-spacing: 1px; }
+      .social-link svg { width: 22px; height: 22px; }
+      .quick-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+      .quick-links a { padding: 17px 8px; text-align: center; }
+      .quick-links a:first-child { padding-left: 8px; }
+      .quick-links a::after { display: none; }
+      .quick-links a:nth-child(odd) { border-right: 1px solid var(--line); }
+      .quick-links a { border-bottom: 1px solid var(--line-soft); }
+      .ahr-link { white-space: normal; text-align: center; }
     }
   </style>
 </head>
 
 <body>
-  <main class="page">
-    <section class="card">
-      <img src="logo.png" alt="Húngaro Empresarial" class="logo" />
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#topo" class="wordmark" aria-label="Húngaro Empresarial">
+        <span class="wordmark-main">Húngaro</span>
+        <span class="wordmark-sub">Empresarial</span>
+        <span class="brand-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </a>
 
-      <div class="line"></div>
+      <nav class="desktop-nav" aria-label="Menu principal">
+        <a href="#quem-somos">Quem Somos</a>
+        <a href="#cases">Cases</a>
+        <a href="#banco-de-terras">Banco de Terras</a>
+        <a href="#radar-hungaro">Radar Húngaro</a>
+        <a href="#area-restrita" class="restricted-link">🔒 Área Restrita</a>
+      </nav>
 
-      <p class="text">
-        A Húngaro Empresarial oferece consultoria estratégica para empresas,
-        produtores rurais e investidores, com foco em resolução de passivos
-        ambientais, embargos e autuações de órgãos reguladores ambientais,
-        estruturação, fornecimento e regularização de reserva legal,
-        regularização de ativos rurais, expansão comercial e desenvolvimento
-        de negócios. Atuamos com discrição, método, segurança jurídica e visão
-        de longo prazo.
-      </p>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
+        <span></span>
+      </button>
+    </div>
 
-      <div class="services">
-        <div class="service">Consultoria Empresarial</div>
-        <div class="service">Expansão Comercial</div>
-        <div class="service">Negócios Estratégicos</div>
-        <div class="service">Passivos Ambientais</div>
-        <div class="service">Embargos e Autuações</div>
-        <div class="service">Reserva Legal</div>
+    <nav class="container mobile-menu" id="menu-mobile" aria-label="Menu mobile">
+      <a href="#quem-somos">Quem Somos</a>
+      <a href="#cases">Cases</a>
+      <a href="#banco-de-terras">Banco de Terras</a>
+      <a href="#radar-hungaro">Radar Húngaro</a>
+      <a href="#area-restrita">🔒 Área Restrita</a>
+    </nav>
+  </header>
+
+  <main id="topo">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 class="headline">
+            <span>Consultoria empresarial</span>
+            <span>com visão integrada</span>
+          </h1>
+
+          <p class="subhead">
+            Estratégia, segurança e estrutura para decisões ambientais,
+            jurídicas e empresariais complexas.
+          </p>
+
+          <a href="#areas" class="hero-button">Conhecer a Húngaro <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="cube-stage">
+          <img
+            src="cube-hungaro.png"
+            alt="Cubo tridimensional da Húngaro Empresarial nas cores verde, branco e vermelho"
+            class="cube-image"
+            width="511"
+            height="456"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
       </div>
+    </section>
 
-      <div class="contact">
-        <strong>Contato</strong><br />
-        <a href="mailto:negocios@hungaroempresarial.com.br">
-          negocios@hungaroempresarial.com.br
-        </a><br />
-        <a href="tel:+5598986138287">+55 98 98613-8287</a><br />
-        São Luís · Maranhão · Brasil<br />
-        CNPJ: 45.243.358/0001-83
-      </div>
+    <div class="area-intro" id="areas">Selecione uma área</div>
 
-      <footer>
-        HÚNGARO EMPRESARIAL · ESTRATÉGIA · AMBIENTAL · EXPANSÃO · NEGÓCIOS
-      </footer>
+    <section class="areas" aria-label="Áreas de atuação">
+      <a href="#ambiental" class="area-card ambiental">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21V8" />
+            <path d="M12 8C8.5 10.2 6 13.2 6 16.2A6 6 0 0 0 18 16.2C18 13.2 15.5 10.2 12 8Z" />
+            <path d="M12 14l3-3M12 17l-3-3" />
+          </svg>
+        </div>
+        <h2 class="area-title">Ambiental</h2>
+        <div class="area-accent"></div>
+        <p class="area-description">Soluções ambientais com segurança técnica e responsabilidade.</p>
+        <span class="area-action">Acessar área →</span>
+      </a>
+
+      <a href="#juridico" class="area-card juridico">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v18M5 7h14M7 7l-4 7h8L7 7ZM17 7l-4 7h8l-4-7ZM9 21h6" />
+          </svg>
+        </div>
+        <h2 class="area-title">Jurídico</h2>
+        <div class="area-accent"></div>
+        <p class="area-description">Estratégia jurídica sólida para riscos e decisões complexas.</p>
+        <span class="area-action">Acessar área →</span>
+      </a>
+
+      <a href="#negocios" class="area-card negocios">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 19h16M6 17v-5M11 17V9M16 17V6M5 10l5-4 4 3 5-6M19 3v5h-5" />
+          </svg>
+        </div>
+        <h2 class="area-title">Negócios</h2>
+        <div class="area-accent"></div>
+        <p class="area-description">Estrutura e inteligência para gerar valor com consistência.</p>
+        <span class="area-action">Acessar área →</span>
+      </a>
     </section>
   </main>
+
+  <footer>
+    <div class="footer-shell">
+      <div class="social-row" aria-label="Redes sociais e contato">
+        <a href="https://www.facebook.com/hungaroempresarial" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 0 0-2 2v2H9v3h2v6h3v-6h2.3l.7-3H14v-1.5c0-.8.3-1.5 1.5-1.5H17V6.2A12 12 0 0 0 15 6c-2.6 0-4 1.6-4 4v2H8v3h3v6"/></svg>
+          <span>Facebook</span>
+        </a>
+
+        <a href="https://wa.me/5598986138287" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.4 3 2.4 5 5.5 6 .6.2 1.2-.6 1.5-1.1"/></svg>
+          <span>WhatsApp</span>
+        </a>
+
+        <a href="mailto:negocios@hungaroempresarial.com.br" class="social-link" aria-label="E-mail">
+          <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+          <span>E-mail</span>
+        </a>
+
+        <a href="https://www.instagram.com/hungaroempresarial" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4"/><circle cx="12" cy="12" r="3.3"/><path d="M16.7 7.3h.1"/></svg>
+          <span>Instagram</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/h%C3%BAngaro-empresarial-871218426" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M6 10v8M6 7h.1M10 18v-8M10 13c0-1.6 1.2-3 3-3s3 1.2 3 3v5"/></svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+
+      <div class="quick-row">
+        <nav class="quick-links" aria-label="Acessos rápidos">
+          <a href="#quem-somos" id="quem-somos">Quem Somos</a>
+          <a href="#cases" id="cases">Cases</a>
+          <a href="#banco-de-terras" id="banco-de-terras">Banco de Terras</a>
+          <a href="#radar-hungaro" id="radar-hungaro">Radar Húngaro</a>
+          <a href="#privacidade" id="privacidade">Política de Privacidade</a>
+        </nav>
+
+        <a href="#area-restrita" class="ahr-link" id="area-restrita">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="1.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          <span>Amazon Heritage Reserve — Área Restrita</span>
+        </a>
+      </div>
+
+      <div class="copyright">
+        Húngaro Empresarial · CNPJ 45.243.358/0001-83<br />
+        © 2026 Húngaro Empresarial. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    mobileMenu?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 </body>
 </html>
