@@ -32,7 +32,7 @@
       --red: #e31b23;
       --card: rgba(255, 255, 255, 0.025);
       --card-hover: rgba(255, 255, 255, 0.05);
-      --max: 1480px;
+      --max: 1560px;
     }
 
     * { box-sizing: border-box; }
@@ -55,7 +55,7 @@
     button { font: inherit; }
 
     .container {
-      width: min(var(--max), calc(100% - 72px));
+      width: min(var(--max), calc(100% - 64px));
       margin-inline: auto;
     }
 
@@ -186,11 +186,11 @@
     }
 
     .hero-grid {
-      min-height: 390px;
+      min-height: 408px;
       display: grid;
       grid-template-columns: minmax(0, 1.04fr) minmax(420px, .96fr);
       align-items: center;
-      gap: 72px;
+      gap: 64px;
     }
 
     .hero-copy {
@@ -246,16 +246,16 @@
     }
 
     .cube-image {
-      width: min(100%, 520px);
+      width: min(100%, 550px);
       height: auto;
       display: block;
       object-fit: contain;
-      filter: drop-shadow(0 32px 40px rgba(0, 0, 0, .55));
+      filter: drop-shadow(0 30px 32px rgba(0, 0, 0, .48));
     }
 
     /* Áreas */
     .area-intro {
-      width: min(1240px, calc(100% - 140px));
+      width: min(1320px, calc(100% - 112px));
       margin: 0 auto 18px;
       display: flex;
       align-items: center;
@@ -276,7 +276,7 @@
     }
 
     .areas {
-      width: min(1240px, calc(100% - 140px));
+      width: min(1320px, calc(100% - 112px));
       margin: 0 auto 26px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -284,8 +284,8 @@
     }
 
     .area-card {
-      min-height: 194px;
-      padding: 22px 28px;
+      min-height: 214px;
+      padding: 24px 30px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -351,6 +351,18 @@
       color: var(--muted);
     }
 
+    .area-action {
+      margin-top: 13px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .ambiental .area-action { color: var(--green); }
+    .juridico .area-action { color: var(--red); }
+
     /* Footer */
     .footer-shell {
       width: min(1420px, calc(100% - 72px));
@@ -372,7 +384,7 @@
       justify-content: center;
       gap: 12px;
       color: rgba(255, 255, 255, 0.70);
-      font-size: 11px;
+      font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
@@ -415,7 +427,7 @@
     .quick-links a {
       position: relative;
       padding: 10px 28px;
-      font-size: 10px;
+      font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.57);
@@ -439,7 +451,7 @@
       align-items: center;
       gap: 12px;
       padding-right: 14px;
-      font-size: 10px;
+      font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.64);
@@ -457,7 +469,7 @@
     .copyright {
       padding: 12px 0 15px;
       text-align: center;
-      font-size: 11px;
+      font-size: 12px;
       color: rgba(255, 255, 255, 0.34);
     }
 
@@ -545,6 +557,7 @@
       .area-icon svg { width: 28px; height: 28px; }
       .area-title { font-size: 13px; letter-spacing: 3px; }
       .area-description { display: none; }
+      .area-action { display: none; }
       .area-accent { margin-top: 4px; }
 
       .footer-shell { width: calc(100% - 28px); }
@@ -638,6 +651,7 @@
         <h2 class="area-title">Ambiental</h2>
         <div class="area-accent"></div>
         <p class="area-description">Soluções ambientais com segurança técnica e responsabilidade.</p>
+        <span class="area-action">Acessar área →</span>
       </a>
 
       <a href="#juridico" class="area-card juridico">
@@ -649,6 +663,7 @@
         <h2 class="area-title">Jurídico</h2>
         <div class="area-accent"></div>
         <p class="area-description">Estratégia jurídica sólida para riscos e decisões complexas.</p>
+        <span class="area-action">Acessar área →</span>
       </a>
 
       <a href="#negocios" class="area-card negocios">
@@ -660,6 +675,7 @@
         <h2 class="area-title">Negócios</h2>
         <div class="area-accent"></div>
         <p class="area-description">Estrutura e inteligência para gerar valor com consistência.</p>
+        <span class="area-action">Acessar área →</span>
       </a>
     </section>
   </main>
@@ -708,7 +724,10 @@
         </a>
       </div>
 
-      <div class="copyright">© 2026 Húngaro Empresarial. Todos os direitos reservados.</div>
+      <div class="copyright">
+        Húngaro Empresarial · CNPJ 45.243.358/0001-83<br />
+        © 2026 Húngaro Empresarial. Todos os direitos reservados.
+      </div>
     </div>
   </footer>
 
